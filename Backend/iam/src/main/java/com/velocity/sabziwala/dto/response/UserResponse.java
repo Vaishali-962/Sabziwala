@@ -3,6 +3,7 @@ package com.velocity.sabziwala.dto.response;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.velocity.sabziwala.entity.User;
 import com.velocity.sabziwala.enums.AuthProvider;
 import com.velocity.sabziwala.enums.Role;
 
@@ -35,4 +36,12 @@ public class UserResponse {
 	private AuthProvider authProvider;
 	private Boolean emailVerified;
 	private LocalDateTime createdAt;
+
+	public static UserResponse from(User user) {
+
+		return UserResponse.builder().userId(user.getUserId()).userName(user.getUserName()).email(user.getEmail())
+				.fullName(user.getFullName()).phone(user.getPhone()).locality(user.getLocality())
+				.address(user.getAddress()).role(user.getRole()).authProvider(user.getAuthProvider())
+				.emailVerified(user.getEmailVerified()).createdAt(user.getCreatedAt()).build();
+	}
 }
