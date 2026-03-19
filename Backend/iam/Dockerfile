@@ -11,5 +11,4 @@ ENTRYPOINT ["java", \
 			"-Xmx256m", \
 			"-Duser.timezone=Asia/kolkata", \
 			"-jar","app.jar",\
-			"--server.port=8082"
-			]
+			"--server.port=8082"]
